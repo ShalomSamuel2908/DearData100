@@ -58,21 +58,20 @@ int[] maxReps = {
   9,9,8,10,9,12,10,8,8,8
 };
 
+
 void setup() {
   size(1000, 700);
   background(245);
 
-  // Print all gym data to the console
-  for (int i = 0; i < exercises.length; i++) {
-    println(exercises[i]);
+  // Display organised workout data
+  displayWorkoutData();
 
-    for (int j = 0; j < 10; j++) {
-      println("Session " + (j + 1) +
-        ": " + weights[i][j] + " lbs, " +
-        reps[i][j] + " reps");
-    }
-  }
+  // Test retrieving data
+  println("Shoulder Press Session 10:");
+  println("Weight: " + getWeight(0, 9) + " lbs");
+  println("Reps: " + getReps(0, 9));
 }
+
 
 void draw() {
   background(245);
@@ -92,7 +91,46 @@ void draw() {
   textSize(14);
   text("10 Exercises | 100 Data Points",
        width / 2, 130);
-  text("Sessions 1-9 estimated; Session 10 recorded",
+  text(" 10 sessions recorded",
        width / 2, 160);
 }
 
+
+void displayWorkoutData() {
+
+  println("===== GYM WORKOUT DATA =====");
+
+  for (int i = 0; i < exercises.length; i++) {
+
+    println("---------------------");
+    println("Exercise: " + exercises[i]);
+
+    // Separate upper and lower body
+    if (i < 5) {
+      println("Upper Body");
+    } else {
+      println("Lower Body");
+    }
+
+    // Display the rep range
+    println("Rep Range: " + minReps[i]
+      + " - " + maxReps[i]);
+
+    // Print the 10 sessions
+    for (int j = 0; j < 10; j++) {
+      println("Session " + (j + 1)
+        + ": " + weights[i][j]
+        + " lbs x " + reps[i][j] + " reps");
+    }
+  }
+}
+
+// Function to retrieve weight
+int getWeight(int exercise, int session) {
+  return weights[exercise][session];
+}
+
+// Function to retrieve reps
+int getReps(int exercise, int session) {
+  return reps[exercise][session];
+}
