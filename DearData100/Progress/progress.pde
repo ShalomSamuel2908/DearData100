@@ -74,27 +74,58 @@ void setup() {
 }
 
 
+
 void draw() {
   background(245);
 
   // Project title
   fill(30);
-  textSize(32);
   textAlign(CENTER);
-  text("My Gym Progress", width / 2, 60);
+  textSize(32);
+  text("My Gym Progress", width / 2, 50);
 
   // Project subtitle
   textSize(16);
   text("Dear Data - 20 Workout Sessions",
-       width / 2, 95);
+       width / 2, 80);
 
-  // Dataset description
-  textSize(14);
-  text("10 Exercises | 100 Data Points",
-       width / 2, 130);
-  text(" 10 sessions recorded",
-       width / 2, 160);
+  // Upper body heading
+  fill(50, 120, 220);
+  textSize(22);
+  text("Upper Body", width / 2, 125);
+
+  // Draw upper body exercise circles
+  for (int i = 0; i < 5; i++) {
+    for (int j = 0; j < 10; j++) {
+
+      float x = 185 + j * 75;
+      float y = 160 + i * 45;
+
+      fill(50, 120, 220);
+      noStroke();
+      ellipse(x, y, 20, 20);
+    }
+  }
+
+  // Lower body heading
+  fill(230, 130, 50);
+  textSize(22);
+  text("Lower Body", width / 2, 415);
+
+  // Draw lower body exercise circles
+  for (int i = 5; i < 10; i++) {
+    for (int j = 0; j < 10; j++) {
+
+      float x = 185 + j * 75;
+      float y = 450 + (i - 5) * 45;
+
+      fill(230, 130, 50);
+      noStroke();
+      ellipse(x, y, 20, 20);
+    }
+  }
 }
+
 
 
 void displayWorkoutData() {
