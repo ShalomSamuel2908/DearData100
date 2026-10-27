@@ -60,18 +60,24 @@ int[] maxReps = {
 };
 
 
-void setup() {
-  size(1000, 700);
-  background(245);
 
-  // Display organised workout data
-  displayWorkoutData();
+color[] upperColours = {
+  color(30, 90, 180),    // Shoulder Press
+  color(50, 130, 220),   // Lat Pulldown
+  color(70, 160, 240),   // Chest Press
+  color(100, 190, 240),  // Pushdown
+  color(140, 210, 250)   // Curl
+};
 
-  // Test retrieving data
-  println("Shoulder Press Session 10:");
-  println("Weight: " + getWeight(0, 9) + " lbs");
-  println("Reps: " + getReps(0, 9));
-}
+color[] lowerColours = {
+  color(220, 90, 30),    // Leg Press
+  color(235, 120, 40),   // Leg Curl
+  color(245, 150, 60),   // Leg Extension
+  color(250, 180, 90),   // Adductor Machine
+  color(255, 205, 120)   // Calf Raise
+};
+
+
 
 
 
@@ -84,7 +90,6 @@ void draw() {
   textSize(32);
   text("My Gym Progress", width / 2, 50);
 
-  // Project subtitle
   textSize(16);
   text("Dear Data - 20 Workout Sessions",
        width / 2, 80);
@@ -94,14 +99,14 @@ void draw() {
   textSize(22);
   text("Upper Body", width / 2, 125);
 
-  // Draw upper body exercise circles
+  // Upper body circles
   for (int i = 0; i < 5; i++) {
     for (int j = 0; j < 10; j++) {
 
       float x = 185 + j * 75;
       float y = 160 + i * 45;
 
-      fill(50, 120, 220);
+      fill(upperColours[i]);
       noStroke();
       ellipse(x, y, 20, 20);
     }
@@ -112,19 +117,20 @@ void draw() {
   textSize(22);
   text("Lower Body", width / 2, 415);
 
-  // Draw lower body exercise circles
+  // Lower body circles
   for (int i = 5; i < 10; i++) {
     for (int j = 0; j < 10; j++) {
 
       float x = 185 + j * 75;
       float y = 450 + (i - 5) * 45;
 
-      fill(230, 130, 50);
+      fill(lowerColours[i - 5]);
       noStroke();
       ellipse(x, y, 20, 20);
     }
   }
 }
+
 
 
 
