@@ -74,7 +74,7 @@ color[] lowerColours = {
   color(235, 120, 40),   // Leg Curl
   color(245, 150, 60),   // Leg Extension
   color(250, 180, 90),   // Adductor Machine
-  color(255, 205, 120)   // Calf Raise..
+  color(255, 205, 120)   // Calf Raise...
 };
 
 
