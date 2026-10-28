@@ -146,9 +146,17 @@ void draw() {
     for (int j = 0; j < 10; j++) {
       float x = 230 + j * 70;
 
-      fill(upperColours[i]);
-      noStroke();
-      ellipse(x, y, 20, 20);
+      
+    
+    fill(upperColours[i]);
+    noStroke();
+
+    // Circle size represents weight lifted
+    float circleSize = getCircleSize(i, j);
+
+    ellipse(x, y, circleSize, circleSize);
+
+
     }
   }
 
@@ -185,9 +193,17 @@ void draw() {
     for (int j = 0; j < 10; j++) {
       float x = 230 + j * 70;
 
-      fill(lowerColours[i - 5]);
-      noStroke();
-      ellipse(x, y, 20, 20);
+
+    fill(lowerColours[i - 5]);
+    noStroke();
+
+    // Circle size represents weight lifted
+    float circleSize = getCircleSize(i, j);
+
+    ellipse(x, y, circleSize, circleSize);
+
+
+
     }
   }
 
@@ -243,4 +259,42 @@ int getWeight(int exercise, int session) {
 // Function to retrieve reps
 int getReps(int exercise, int session) {
   return reps[exercise][session];
+}
+
+
+
+float getCircleSize(int exercise, int session) {
+
+  // Find the lowest and highest weights
+  // for this exercise across 10 sessions
+
+  int minWeight = weights[exercise][0];
+  int maxWeight = weights[exercise][0];
+
+  for (int j = 1; j < 10; j++) {
+
+    if (weights[exercise][j] < minWeight) {
+      minWeight = weights[exercise][j];
+    }
+
+    if (weights[exercise][j] > maxWeight) {
+      maxWeight = weights[exercise][j];
+    }
+  }
+
+  // Avoid dividing by zero if all weights match
+  if (minWeight == maxWeight) {
+    return 20;
+  }
+
+  // Convert weight into circle diameter
+  float circleSize = map(
+    weights[exercise][session],
+    minWeight,
+    maxWeight,
+    12,
+    30
+  );
+
+  return circleSize;
 }
