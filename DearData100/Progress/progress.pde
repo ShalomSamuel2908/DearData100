@@ -115,7 +115,7 @@ void draw() {
        width / 2, 75);
 
   // ----------------------
-  // UPPER BODY SECTION
+  // UPPER BODY SECTION...
   // ----------------------
 
   fill(50, 120, 220);
