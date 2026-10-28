@@ -74,8 +74,27 @@ color[] lowerColours = {
   color(235, 120, 40),   // Leg Curl
   color(245, 150, 60),   // Leg Extension
   color(250, 180, 90),   // Adductor Machine
-  color(255, 205, 120)   // Calf Raise.....
+  color(255, 205, 120)   // Calf Raise
 };
+
+
+
+void setup() {
+  size(1000, 700);
+  background(245);
+
+  // Display all workout data in the console
+  displayWorkoutData();
+
+  // Test the final shoulder press session
+  println("Shoulder Press Session 10:");
+  println("Weight: " + getWeight(0, 9) + " lbs");
+  println("Reps: " + getReps(0, 9));
+}
+
+
+
+
 
 
 
@@ -84,27 +103,48 @@ color[] lowerColours = {
 void draw() {
   background(245);
 
-  // Project title
+  // Main title
   fill(30);
   textAlign(CENTER);
   textSize(32);
-  text("My Gym Progress", width / 2, 50);
+  text("My Gym Progress", width / 2, 45);
 
+  // Subtitle
   textSize(16);
   text("Dear Data - 20 Workout Sessions",
-       width / 2, 80);
+       width / 2, 75);
 
-  // Upper body heading
+  // ----------------------
+  // UPPER BODY SECTION
+  // ----------------------
+
   fill(50, 120, 220);
   textSize(22);
-  text("Upper Body", width / 2, 125);
+  text("Upper Body", width / 2, 115);
 
-  // Upper body circles
+  // Session numbers for upper body
+  fill(70);
+  textSize(12);
+
+  for (int j = 0; j < 10; j++) {
+    float x = 230 + j * 70;
+    text(j + 1, x, 150);
+  }
+
+  // Draw upper body exercises
   for (int i = 0; i < 5; i++) {
-    for (int j = 0; j < 10; j++) {
 
-      float x = 185 + j * 75;
-      float y = 160 + i * 45;
+    float y = 185 + i * 38;
+
+    // Display exercise name
+    fill(30);
+    textAlign(RIGHT);
+    textSize(12);
+    text(exercises[i], 195, y + 4);
+
+    // Draw session circles
+    for (int j = 0; j < 10; j++) {
+      float x = 230 + j * 70;
 
       fill(upperColours[i]);
       noStroke();
@@ -112,24 +152,56 @@ void draw() {
     }
   }
 
-  // Lower body heading
+  // ----------------------
+  // LOWER BODY SECTION
+  // ----------------------
+
+  textAlign(CENTER);
   fill(230, 130, 50);
   textSize(22);
-  text("Lower Body", width / 2, 415);
+  text("Lower Body", width / 2, 420);
 
-  // Lower body circles
+  // Session numbers for lower body
+  fill(70);
+  textSize(12);
+
+  for (int j = 0; j < 10; j++) {
+    float x = 230 + j * 70;
+    text(j + 1, x, 450);
+  }
+
+  // Draw lower body exercises
   for (int i = 5; i < 10; i++) {
-    for (int j = 0; j < 10; j++) {
 
-      float x = 185 + j * 75;
-      float y = 450 + (i - 5) * 45;
+    float y = 480 + (i - 5) * 38;
+
+    // Display exercise name
+    fill(30);
+    textAlign(RIGHT);
+    textSize(12);
+    text(exercises[i], 195, y + 4);
+
+    // Draw session circles
+    for (int j = 0; j < 10; j++) {
+      float x = 230 + j * 70;
 
       fill(lowerColours[i - 5]);
       noStroke();
       ellipse(x, y, 20, 20);
     }
   }
+
+  // ----------------------
+  // LEGEND
+  // ----------------------
+
+  textAlign(LEFT);
+  fill(60);
+  textSize(12);
+  text("Each circle = one exercise in one session",
+       25, 685);
 }
+
 
 
 
