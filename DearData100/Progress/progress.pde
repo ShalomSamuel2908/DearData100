@@ -59,8 +59,6 @@ int[] maxReps = {
   9,9,8,10,9,12,10,8,8,8
 };
 
-
-
 color[] upperColours = {
   color(30, 90, 180),    // Shoulder Press
   color(50, 130, 220),   // Lat Pulldown
@@ -91,14 +89,6 @@ void setup() {
   println("Weight: " + getWeight(0, 9) + " lbs");
   println("Reps: " + getReps(0, 9));
 }
-
-
-
-
-
-
-
-
 
 void draw() {
   background(245);
@@ -146,16 +136,15 @@ void draw() {
     for (int j = 0; j < 10; j++) {
       float x = 230 + j * 70;
 
-      
-    
-    fill(upperColours[i]);
-    noStroke();
+  fill(upperColours[i]);
+  noStroke();
 
-    // Circle size represents weight lifted
-    float circleSize = getCircleSize(i, j);
+  // Circle size represents weight
+  float circleSize = getCircleSize(i, j);
+  ellipse(x, y, circleSize, circleSize);
 
-    ellipse(x, y, circleSize, circleSize);
-
+  // Small dots represent repetitions
+  drawRepDots(x, y, circleSize, reps[i][j]);
 
     }
   }
@@ -193,16 +182,15 @@ void draw() {
     for (int j = 0; j < 10; j++) {
       float x = 230 + j * 70;
 
+  fill(lowerColours[i - 5]);
+  noStroke();
 
-    fill(lowerColours[i - 5]);
-    noStroke();
+  // Circle size represents weight
+  float circleSize = getCircleSize(i, j);
+  ellipse(x, y, circleSize, circleSize);
 
-    // Circle size represents weight lifted
-    float circleSize = getCircleSize(i, j);
-
-    ellipse(x, y, circleSize, circleSize);
-
-
+  // Small dots represent repetitions
+  drawRepDots(x, y, circleSize, reps[i][j]);
 
     }
   }
@@ -214,13 +202,13 @@ void draw() {
   textAlign(LEFT);
   fill(60);
   textSize(12);
-  text("Each circle = one exercise in one session",
-       25, 685);
+  
+
+  text("Circle size = weight lifted (lbs)", 25, 670);
+  text("Small dots = repetitions completed", 25, 688);
+
+
 }
-
-
-
-
 
 void displayWorkoutData() {
 
@@ -298,3 +286,34 @@ float getCircleSize(int exercise, int session) {
 
   return circleSize;
 }
+
+void drawRepDots(float x, float y,
+                 float circleSize, int repCount) {
+
+  // Display one small dot for each repetition
+  // Arrange dots in a compact grid
+
+  int columns = 3;
+  float spacing = 5;
+
+  // Centre the grid inside the circle
+  int rows = (int)ceil(repCount / 3.0);
+
+  float startX = x - (columns - 1) * spacing / 2;
+  float startY = y - (rows - 1) * spacing / 2;
+
+  fill(25, 40, 60);
+  noStroke();
+
+  for (int k = 0; k < repCount; k++) {
+
+    int column = k % columns;
+    int row = k / columns;
+
+    float dotX = startX + column * spacing;
+    float dotY = startY + row * spacing;
+
+    ellipse(dotX, dotY, 2.5, 2.5);
+  }
+}
+
