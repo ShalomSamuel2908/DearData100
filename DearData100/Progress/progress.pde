@@ -150,7 +150,7 @@ void draw() {
   }
 
   // ----------------------
-  // LOWER BODY SECTION
+  // LOWER BODY SECTION.
   // ----------------------
 
   textAlign(CENTER);
