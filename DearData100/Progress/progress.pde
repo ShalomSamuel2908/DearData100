@@ -104,9 +104,9 @@ void draw() {
   text("Dear Data - 20 Workout Sessions",
        width / 2, 75);
 
-  // ----------------------
-  // UPPER BODY SECTION...
-  // ----------------------
+
+  // UPPER BODY SECTION
+
 
   fill(50, 120, 220);
   textSize(22);
@@ -149,9 +149,9 @@ void draw() {
     }
   }
 
-  // ----------------------
-  // LOWER BODY SECTION.
-  // ----------------------
+
+  // LOWER BODY SECTION
+
 
   textAlign(CENTER);
   fill(230, 130, 50);
@@ -195,9 +195,9 @@ void draw() {
     }
   }
 
-  // ----------------------
+
   // LEGEND
-  // ----------------------
+
 
   textAlign(LEFT);
   fill(60);
@@ -316,4 +316,3 @@ void drawRepDots(float x, float y,
     ellipse(dotX, dotY, 2.5, 2.5);
   }
 }
-
