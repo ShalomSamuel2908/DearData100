@@ -10,7 +10,7 @@ String[] exercises = {
   "Adductor Machine",
   "Calf Raise"
 };
-// Array of all exercises.
+// Array of all exercises...
 
 // First 5 exercises are upper body.
 // Last 5 exercises are lower body.
