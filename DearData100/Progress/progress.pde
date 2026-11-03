@@ -196,7 +196,7 @@ void draw() {
   }
 
 
-  // LEGEND
+  // LEGEND.
 
 
   textAlign(LEFT);
