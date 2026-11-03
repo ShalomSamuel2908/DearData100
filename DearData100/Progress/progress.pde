@@ -97,7 +97,7 @@ void draw() {
   fill(30);
   textAlign(CENTER);
   textSize(32);
-  text("My Gym Progress", width / 2, 45);
+  text("Gym Progress", width / 2, 45);
 
   // Subtitle
   textSize(16);
