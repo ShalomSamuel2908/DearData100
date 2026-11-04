@@ -1,3 +1,4 @@
+
 String[] exercises = {
   "Shoulder Press",
   "Lat Pulldown",
@@ -75,8 +76,6 @@ color[] lowerColours = {
   color(255, 205, 120)   // Calf Raise
 };
 
-
-
 void setup() {
   size(1000, 700);
   background(245);
@@ -104,9 +103,7 @@ void draw() {
   text("Dear Data - 20 Workout Sessions",
        width / 2, 75);
 
-
   // UPPER BODY SECTION
-
 
   fill(50, 120, 220);
   textSize(22);
@@ -136,22 +133,16 @@ void draw() {
     for (int j = 0; j < 10; j++) {
       float x = 230 + j * 70;
 
-  fill(upperColours[i]);
-  noStroke();
+      fill(upperColours[i]);
+      noStroke();
 
-  // Circle size represents weight
-  float circleSize = getCircleSize(i, j);
-  ellipse(x, y, circleSize, circleSize);
-
-  // Small dots represent repetitions
-  drawRepDots(x, y, circleSize, reps[i][j]);
-
+      // Circle size represents weight
+      float circleSize = getCircleSize(i, j);
+      ellipse(x, y, circleSize, circleSize);
     }
   }
 
-
   // LOWER BODY SECTION
-
 
   textAlign(CENTER);
   fill(230, 130, 50);
@@ -182,32 +173,22 @@ void draw() {
     for (int j = 0; j < 10; j++) {
       float x = 230 + j * 70;
 
-  fill(lowerColours[i - 5]);
-  noStroke();
+      fill(lowerColours[i - 5]);
+      noStroke();
 
-  // Circle size represents weight
-  float circleSize = getCircleSize(i, j);
-  ellipse(x, y, circleSize, circleSize);
-
-  // Small dots represent repetitions
-  drawRepDots(x, y, circleSize, reps[i][j]);
-
+      // Circle size represents weight
+      float circleSize = getCircleSize(i, j);
+      ellipse(x, y, circleSize, circleSize);
     }
   }
 
-
-  // LEGEND...
-
+  // LEGEND
 
   textAlign(LEFT);
   fill(60);
   textSize(12);
-  
 
-  text("Circle size = weight lifted (lbs)", 25, 670);
-  text("Small dots = repetitions completed", 25, 688);
-
-
+  text("Circle size = weight lifted (lbs)", 25, 685);
 }
 
 void displayWorkoutData() {
@@ -249,8 +230,6 @@ int getReps(int exercise, int session) {
   return reps[exercise][session];
 }
 
-
-
 float getCircleSize(int exercise, int session) {
 
   // Find the lowest and highest weights
@@ -285,34 +264,4 @@ float getCircleSize(int exercise, int session) {
   );
 
   return circleSize;
-}
-
-void drawRepDots(float x, float y,
-                 float circleSize, int repCount) {
-
-  // Display one small dot for each repetition
-  // Arrange dots in a compact grid
-
-  int columns = 3;
-  float spacing = 5;
-
-  // Centre the grid inside the circle
-  int rows = (int)ceil(repCount / 3.0);
-
-  float startX = x - (columns - 1) * spacing / 2;
-  float startY = y - (rows - 1) * spacing / 2;
-
-  fill(25, 40, 60);
-  noStroke();
-
-  for (int k = 0; k < repCount; k++) {
-
-    int column = k % columns;
-    int row = k / columns;
-
-    float dotX = startX + column * spacing;
-    float dotY = startY + row * spacing;
-
-    ellipse(dotX, dotY, 2.5, 2.5);
-  }
 }

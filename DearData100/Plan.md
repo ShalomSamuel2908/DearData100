@@ -1,17 +1,74 @@
-Dear Data Project – Plan
-Topic: Tracking my gym progress over 20 sessions using Processing.
-1. Choose topic – Track my strength improvements at the gym.
-2. Collect data – Record 10 upper-body and 10 lower-body gym sessions.
-3. Choose exercises – Select 5 upper-body and 5 lower-body exercises.
-4. Organise data – Record exercise names, weights (lbs) and session numbers in a CSV file.
-5. Plan visualisation – Sketch ideas for displaying gym progress creatively.
-6. Set up Processing – Create a new Processing project.
-7. Set up GitHub – Create a repository to track project development.
-8. Write basic code – Load gym data into Processing.
-9. Create visualisation – Use shapes, colours and graphs to show weight progression.
-10. Add interactivity – Allow users to select exercises and compare sessions.
-11. Improve design – Add titles, labels, legends and clear colour coding.
-12. Make Git commits – Save progress regularly with meaningful commit messages.
-13. Test project – Check that the code, data and interactions work correctly.
-14. Evaluate project – Explain what the data reveals about my gym progress.
-15. Final submission – Organise Processing files, CSV data, GitHub repository and documentation.
+Dear Data Project – Gym Progress Tracker
+
+1. Project Idea
+- Track my gym progress over 20 workout sessions.
+- 10 upper-body sessions and 10 lower-body sessions.
+- Record the weights I lift for 10 different exercises.
+- Use Processing to visualise my strength improvements.
+
+2. What I Want to Display
+- Weight lifted (lbs) for each exercise.
+- Changes in weight across 10 sessions.
+- Upper-body vs lower-body progress.
+- Exercises with the biggest improvements.
+- Different colours to represent exercises.
+- Interactive graphs to explore my progress.
+
+3. Advantages
+- Personal topic that interests me.
+- Numerical data is easy to compare.
+- Can visually demonstrate strength improvements.
+- Opportunity to experiment with creative designs.
+- Helps me develop my Processing skills.
+
+4. Disadvantages / Challenges
+- Some previous gym data may be missing.
+- Small weight increases may be difficult to see.
+- Different exercises have different weight ranges.
+- Too much information may make the visualisation confusing.
+- Creating interactive features may be challenging.
+- Weight lifted alone does not fully represent strength.
+
+5. How I Will Record My Development
+- Store gym data in gym-data.csv.
+- Create initial sketches of visualisation ideas.
+- Develop my Processing code in stages.
+- Use GitHub commits to track my progress.
+- Take screenshots of important development stages.
+- Document problems, solutions and improvements.
+- Clearly identify any reconstructed data.
+
+6.Success Criteria
+-  Organise data for 20 gym sessions.
+-  Create a working Processing visualisation.
+-  Display weight progression clearly.
+-  Use colours, shapes and labels effectively.
+-  Include interactive features.
+-  Allow comparisons between exercises.
+-  Use variables, arrays, loops and methods.
+-  Track development through GitHub commits.
+-  Test and improve the final program.
+-  Complete a short project evaluation.
+
+7.Development stages
+1. Research Dear Data and choose my topic.
+2. Collect and organise gym data.
+3. Sketch possible visualisation designs.
+4. Set up Processing and GitHub.
+5. Write the basic Processing code.
+6. Create graphs and visual elements.
+7. Add interactive features.
+8. Improve the design and fix errors.
+9. Test the final project.
+10. Document and submit my work.
+
+8.What I want to learn
+- How to visualise personal data creatively.
+- How to use Processing confidently.
+- How to work with CSV files and arrays.
+- How to use loops, conditionals and methods.
+- How to create an interactive visualisations.
+-How to track project development using GitHub.
+
+9. Final Goal:
+Create a clear, creative and interactive visualisation that show my gym strength changes over 20 workout sessions while demonstrating my development in creative coding.
